@@ -1,0 +1,6 @@
+<h1>Toggle Component</h1>
+<button type="button" (click)="showName()">Show movie name</button>
+<p>{{ movieName }}</p>
+<input type="text" value="{{ movieName }}"> <!-- this uses string interpolation to render movieName on the template-->
+<input type="text" [value]="movieName"> <!-- this uses property binding to render movieName on the template-->
+
