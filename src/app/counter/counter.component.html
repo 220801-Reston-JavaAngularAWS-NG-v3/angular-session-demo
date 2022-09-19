@@ -1,6 +1,12 @@
 <h1>Counter Component</h1>
 <button type="button" (click)="decrementCounter()">-</button>
+<!-- one way property binding using string interpolation -->
 <!-- <input type="text" value="{{ counter }}"/> -->
-<input type="text" [value]="counter"/>
+
+<!-- one way property binding using [] -->
+<!-- <input type="text" [value]="counter"/> -->
+
+<!-- two way property binding using [(ngModel)] -->
+<input type="text" [(ngModel)]="counter"/>
 <button type="button" (click)="incrementCounter()">+</button>
 

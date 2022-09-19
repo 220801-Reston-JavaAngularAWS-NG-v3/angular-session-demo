@@ -6,17 +6,21 @@ import { AppComponent } from './app.component';
 import { DisplayComponent } from './display/display.component';
 import { ToggleComponent } from './toggle/toggle.component';
 import { CounterComponent } from './counter/counter.component';
+import { FormsModule } from '@angular/forms';
+import { ListBooksComponent } from './list-books/list-books.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     DisplayComponent,
     ToggleComponent,
-    CounterComponent
+    CounterComponent,
+    ListBooksComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
