@@ -1,0 +1,67 @@
+
+<div class="row">
+    <div class="col-4"></div>
+    <div class="col-4">
+        <form (ngSubmit)="updateBook()">
+            <div class="card mt-3">
+                <div class="card-title bg-success text-white"><h2>UPDATE BOOK</h2></div>
+                <div class="card-body">
+                    <div class="mb-3 mt-3">
+                        <label for="bTitle" class="form-label">Book Title:</label>
+                        <input 
+                            type="text" 
+                            class="form-control" 
+                            id="bTitle" 
+                            placeholder="Enter book title"
+                            name="bookTitle"
+                            [(ngModel)]="updatedBook.bookTitle">
+                    </div>
+                    <div class="mb-3">
+                        <label for="bAuthor" class="form-label">Book Authur:</label>
+                        <input 
+                            type="text" 
+                            class="form-control" 
+                            id="bAuthor"
+                            placeholder="Enter book authur" 
+                            name="bookAuthor"
+                            [(ngModel)]="updatedBook.bookAuthor">
+                    </div>
+                    <div class="mb-3 mt-3">
+                        <label for="bGenre" class="form-label">Book Genre:</label>
+                        <input 
+                            type="text" 
+                            class="form-control" 
+                            id="bGenre" 
+                            placeholder="Enter book genre"
+                            name="bookGenre"
+                            [(ngModel)]="updatedBook.bookGenre">
+                    </div>
+                    <div class="mb-3 mt-3">
+                        <label for="bCost" class="form-label">Book Cost:</label>
+                        <input 
+                            type="text" 
+                            class="form-control" 
+                            id="bCost" 
+                            placeholder="Enter book cost"
+                            name="bookCost"
+                            [(ngModel)]="updatedBook.bookCost">
+                    </div>
+                    <div class="mb-3 mt-3">
+                        <label for="bImage" class="form-label">Book Image URL:</label>
+                        <input 
+                            type="text" 
+                            class="form-control" 
+                            id="bImage" 
+                            placeholder="Enter image url"
+                            name="bookImage"
+                            [(ngModel)]="updatedBook.bookImageUrl">
+                    </div>
+                </div>
+                <div class="card-footer bg-success">
+                    <button type="submit" class="btn btn-warning">UPDATE</button>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="col-4"></div>
+</div>

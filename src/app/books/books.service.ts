@@ -64,4 +64,28 @@ export class BooksService {
   deleteBook(bookID: number): void{
     this.allBooks = this.allBooks.filter((eachBook)=> eachBook.bookId != bookID);
   }
+
+  getABook(bookId: number): BookModel{
+    var sendBook = {
+      bookId: 0,
+      bookTitle: "",
+      bookAuthor: "",
+      bookGenre: "",
+      bookCost: 0,
+      bookImageUrl: "",
+    }
+    for(let i=0;i<this.allBooks.length;i++){
+      if(this.allBooks[i].bookId == bookId){
+        sendBook = {
+          bookId: this.allBooks[i].bookId,
+          bookTitle: this.allBooks[i].bookTitle,
+          bookAuthor: this.allBooks[i].bookAuthor,
+          bookGenre: this.allBooks[i].bookGenre,
+          bookCost: this.allBooks[i].bookCost,
+          bookImageUrl: this.allBooks[i].bookImageUrl,
+        }
+      }
+    }
+    return sendBook;
+  }
 }

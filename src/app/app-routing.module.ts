@@ -4,6 +4,7 @@ import { CounterComponent } from './counter/counter.component';
 import { DisplayComponent } from './display/display.component';
 import { ListBooksComponent } from './books/list-books/list-books.component';
 import { ToggleComponent } from './toggle/toggle.component';
+import { EditBookComponent } from './books/edit-book/edit-book.component';
 
 const routes: Routes = [
   {
@@ -21,6 +22,10 @@ const routes: Routes = [
   {
     path: "list-books", 
     component: ListBooksComponent
+  },
+  {
+    path: "edit-book/:bid", 
+    component: EditBookComponent
   }
 
 ];

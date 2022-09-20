@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { BookModel } from '../book.model';
 import { BooksService } from '../books.service';
 
@@ -9,8 +10,18 @@ import { BooksService } from '../books.service';
 })
 export class ListBooksComponent implements OnInit {
 
-  //movieName: string = "John Carter";
+  showAddBookForm: boolean = false;
   allBooks: BookModel[] = [];
+
+  newBook: BookModel = {
+    bookId: 0,
+    bookTitle: "",
+    bookAuthor: "",
+    bookGenre: "",
+    bookCost: 0,
+    bookImageUrl: ""
+  }
+
   // allBooks = [{
   //   bookId: 101,
   //   bookTitle: "Harry Potter and The Deathly Hallows",
@@ -37,7 +48,7 @@ export class ListBooksComponent implements OnInit {
   // }];
 
   // here we are injecting BookService into ListBooksComponent through the constructor
-  constructor(private bookService: BooksService) { }
+  constructor(private bookService: BooksService, private router: Router) { }
 
   ngOnInit(): void {
     // here we will fetch all the books from the BooksService
@@ -61,5 +72,30 @@ export class ListBooksComponent implements OnInit {
 
   editBook(bookID: number){
     // later we will fill in the code
+
+    // here we should navigate to EditBookComponent
+    // to navigate we need a API called Router
+    // so we have to inject Router through the constructor
+
+    this.router.navigate(["edit-book", bookID]);
+  }
+
+  addBook(): void{
+    console.log(this.newBook);
+    this.bookService.addBook(this.newBook);
+    this.allBooks = this.loadBooks();
+    this.newBook = {
+      bookId: 0,
+      bookTitle: "",
+      bookAuthor: "",
+      bookGenre: "",
+      bookCost: 0,
+      bookImageUrl: ""
+    }
+    this.showAddBookForm = false;
+  }
+
+  toggleBookForm(): void{ 
+      this.showAddBookForm = !this.showAddBookForm;
   }
 }

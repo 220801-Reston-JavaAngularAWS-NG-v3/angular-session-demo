@@ -1,7 +1,77 @@
-<div class="container">
+<div class="container mt-5">
     <div class="row">
         <div class="col-2"></div>
         <div class="col-8">
+            <button type="button" class="btn btn-success" (click)="toggleBookForm()">Add a New Book</button>
+            <div *ngIf="showAddBookForm">
+                <div class="row">
+                    <div class="col-4"></div>
+                    <div class="col-4">
+                        <form (ngSubmit)="addBook()">
+                            <div class="card mt-3">
+                                <div class="card-title bg-success text-white">ADD A NEW BOOK</div>
+                                <div class="card-body">
+                                    <div class="mb-3 mt-3">
+                                        <label for="bTitle" class="form-label">Book Title:</label>
+                                        <input 
+                                            type="text" 
+                                            class="form-control" 
+                                            id="bTitle" 
+                                            placeholder="Enter book title"
+                                            name="bookTitle"
+                                            [(ngModel)]="newBook.bookTitle">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="bAuthor" class="form-label">Book Authur:</label>
+                                        <input 
+                                            type="text" 
+                                            class="form-control" 
+                                            id="bAuthor"
+                                            placeholder="Enter book authur" 
+                                            name="bookAuthor"
+                                            [(ngModel)]="newBook.bookAuthor">
+                                    </div>
+                                    <div class="mb-3 mt-3">
+                                        <label for="bGenre" class="form-label">Book Genre:</label>
+                                        <input 
+                                            type="text" 
+                                            class="form-control" 
+                                            id="bGenre" 
+                                            placeholder="Enter book genre"
+                                            name="bookGenre"
+                                            [(ngModel)]="newBook.bookGenre">
+                                    </div>
+                                    <div class="mb-3 mt-3">
+                                        <label for="bCost" class="form-label">Book Cost:</label>
+                                        <input 
+                                            type="text" 
+                                            class="form-control" 
+                                            id="bCost" 
+                                            placeholder="Enter book cost"
+                                            name="bookCost"
+                                            [(ngModel)]="newBook.bookCost">
+                                    </div>
+                                    <div class="mb-3 mt-3">
+                                        <label for="bImage" class="form-label">Book Image URL:</label>
+                                        <input 
+                                            type="text" 
+                                            class="form-control" 
+                                            id="bImage" 
+                                            placeholder="Enter image url"
+                                            name="bookImage"
+                                            [(ngModel)]="newBook.bookImageUrl">
+                                    </div>
+                                </div>
+                                <div class="card-footer bg-success">
+                                    <button type="submit" class="btn btn-warning">ADD</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="col-4"></div>
+                </div>
+
+            </div>
             <h3>LIST OF BOOKS</h3>
             <table class="table table-striped">
                 <thead>
@@ -19,7 +89,7 @@
                 <tbody>
                     <tr *ngFor="let eachBook of allBooks">
                         <td>{{ eachBook.bookId }}</td>
-                        <td><img [src]="eachBook.bookImageUrl" height="60px" width="100px" ></td>
+                        <td><img [src]="eachBook.bookImageUrl" height="60px" width="100px"></td>
                         <td>{{ eachBook.bookTitle }}</td>
                         <td>{{ eachBook.bookAuthor }}</td>
                         <td>{{ eachBook.bookGenre }}</td>
@@ -42,5 +112,3 @@
     </div>
 
 </div>
-
-
