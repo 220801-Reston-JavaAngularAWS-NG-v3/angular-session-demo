@@ -8,6 +8,7 @@ import { ToggleComponent } from './toggle/toggle.component';
 import { CounterComponent } from './counter/counter.component';
 import { FormsModule } from '@angular/forms';
 import { ListBooksComponent } from './list-books/list-books.component';
+import { HeaderComponent } from './header/header.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { ListBooksComponent } from './list-books/list-books.component';
     DisplayComponent,
     ToggleComponent,
     CounterComponent,
-    ListBooksComponent
+    ListBooksComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,

@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ListBooksComponent implements OnInit {
 
+  //movieName: string = "John Carter";
+
   allBooks = [{
     bookId: 101,
     bookTitle: "Harry Potter and The Deathly Hallows",
@@ -24,7 +26,7 @@ export class ListBooksComponent implements OnInit {
     bookImageUrl: "https://images.unsplash.com/photo-1626618012641-bfbca5a31239?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=464&q=80"
   },
   {
-    bookId: 101,
+    bookId: 103,
     bookTitle: "Harry Potter and The Sorcerers Stone",
     bookAuthor: "J.K.Rowling",
     bookGenre: "Fiction",
@@ -37,4 +39,12 @@ export class ListBooksComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  deleteBook(bookID: number){
+    console.log(bookID);
+    this.allBooks = this.allBooks.filter((eachBook)=> eachBook.bookId != bookID);
+  }
+
+  editBook(bookID: number){
+    // later we will fill in the code
+  }
 }

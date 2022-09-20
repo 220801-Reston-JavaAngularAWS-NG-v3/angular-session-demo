@@ -12,6 +12,8 @@
                         <th>AUTHOR</th>
                         <th>GENRE</th>
                         <th>COST</th>
+                        <th></th>
+                        <th></th>
                     </tr>
                 </thead>
                 <tbody>
@@ -22,6 +24,16 @@
                         <td>{{ eachBook.bookAuthor }}</td>
                         <td>{{ eachBook.bookGenre }}</td>
                         <td>{{ eachBook.bookCost }}</td>
+                        <td>
+                            <button type="button" class="btn btn-primary" (click)="editBook(eachBook.bookId)">
+                                <span class="material-symbols-outlined">edit</span>
+                            </button>
+                        </td>
+                        <td>
+                            <button type="button" class="btn btn-danger" (click)="deleteBook(eachBook.bookId)">
+                                <span class="material-symbols-outlined">delete</span>
+                            </button>
+                        </td>
                     </tr>
                 </tbody>
             </table>
