@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { CounterComponent } from './counter/counter.component';
 import { DisplayComponent } from './display/display.component';
-import { ListBooksComponent } from './list-books/list-books.component';
+import { ListBooksComponent } from './books/list-books/list-books.component';
 import { ToggleComponent } from './toggle/toggle.component';
 
 const routes: Routes = [

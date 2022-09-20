@@ -7,7 +7,7 @@ import { DisplayComponent } from './display/display.component';
 import { ToggleComponent } from './toggle/toggle.component';
 import { CounterComponent } from './counter/counter.component';
 import { FormsModule } from '@angular/forms';
-import { ListBooksComponent } from './list-books/list-books.component';
+import { ListBooksComponent } from './books/list-books/list-books.component';
 import { HeaderComponent } from './header/header.component';
 
 @NgModule({
