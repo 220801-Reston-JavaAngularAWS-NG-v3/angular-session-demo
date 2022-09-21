@@ -97,5 +97,10 @@ export class ListBooksComponent implements OnInit {
 
   toggleBookForm(): void{ 
       this.showAddBookForm = !this.showAddBookForm;
+  
+  }
+
+  logTittle(bTitle: any){
+    console.log(bTitle);
   }
 }
