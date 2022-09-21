@@ -10,6 +10,9 @@ import { FormsModule } from '@angular/forms';
 import { ListBooksComponent } from './books/list-books/list-books.component';
 import { HeaderComponent } from './header/header.component';
 import { EditBookComponent } from './books/edit-book/edit-book.component';
+import { ListBooksHttpComponent } from './books-http/list-books-http/list-books-http.component';
+import { EditBookHttpComponent } from './books-http/edit-book-http/edit-book-http.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -19,12 +22,15 @@ import { EditBookComponent } from './books/edit-book/edit-book.component';
     CounterComponent,
     ListBooksComponent,
     HeaderComponent,
-    EditBookComponent
+    EditBookComponent,
+    ListBooksHttpComponent,
+    EditBookHttpComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
