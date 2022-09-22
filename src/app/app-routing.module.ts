@@ -7,35 +7,53 @@ import { ToggleComponent } from './toggle/toggle.component';
 import { EditBookComponent } from './books/edit-book/edit-book.component';
 import { ListBooksHttpComponent } from './books-http/list-books-http/list-books-http.component';
 import { EditBookHttpComponent } from './books-http/edit-book-http/edit-book-http.component';
+import { UserComponent } from './users/user/user.component';
+import { LogoutComponent } from './users/logout/logout.component';
+import { LoginGuard } from './users/login.guard';
 
 const routes: Routes = [
   {
+    path: "login", 
+    component: UserComponent
+  },
+  {
+    path: "logout", 
+    component: LogoutComponent
+  },
+  {
     path: "display", 
-    component: DisplayComponent
+    component: DisplayComponent,
+    canActivate: [LoginGuard]
   },
   {
     path: "counter", 
-    component: CounterComponent
+    component: CounterComponent,
+    canActivate: [LoginGuard]
   },
   {
     path: "toggle", 
-    component: ToggleComponent
+    component: ToggleComponent,
+    canActivate: [LoginGuard]
   },
   {
     path: "list-books", 
-    component: ListBooksComponent
+    component: ListBooksComponent,
+    canActivate: [LoginGuard]
   },
   {
     path: "edit-book/:bid", 
-    component: EditBookComponent
+    component: EditBookComponent,
+    canActivate: [LoginGuard]
   },
   {
     path: "list-books-http", 
-    component: ListBooksHttpComponent
+    component: ListBooksHttpComponent,
+    canActivate: [LoginGuard]
   },
   {
     path: "edit-book-http/:bid", 
-    component: EditBookHttpComponent
+    component: EditBookHttpComponent,
+    canActivate: [LoginGuard]
   }
 
 

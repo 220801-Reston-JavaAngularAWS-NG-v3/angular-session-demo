@@ -1,25 +1,31 @@
 <nav class="navbar navbar-expand-sm bg-secondary navbar-dark">
     <div class="container-fluid">
       <ul class="navbar-nav">
-        <li class="nav-item">
+        <li class="nav-item" *ngIf="!retrieveIsUserLoggedIn()">
+          <!-- <a class="nav-link" href="list-books">List Books Component</a> -->
+          <a class="nav-link" routerLink="login">Login ||</a>
+        </li>
+        <li class="nav-item" *ngIf="retrieveIsUserLoggedIn()">
           <!-- <a class="nav-link" href="display">Display Component ||</a> -->
           <a class="nav-link" routerLink="display">Display Component ||</a>
         </li>
-        <li class="nav-item">
+        <li class="nav-item" *ngIf="retrieveIsUserLoggedIn()">
           <!-- <a class="nav-link" href="toggle">Toggle Component ||</a> -->
           <a class="nav-link" routerLink="toggle">Toggle Component ||</a>
         </li>
-        <li class="nav-item">
+        <li class="nav-item" *ngIf="retrieveIsUserLoggedIn()">
           <!-- <a class="nav-link" href="counter">Counter Component ||</a> -->
           <a class="nav-link" routerLink="counter">Counter Component ||</a>
         </li>
-        <li class="nav-item">
+        <li class="nav-item" *ngIf="retrieveIsUserLoggedIn()">
           <!-- <a class="nav-link" href="list-books">List Books Component</a> -->
           <a class="nav-link" routerLink="list-books">List Books Component ||</a>
         </li>
-        <li class="nav-item">
-          <!-- <a class="nav-link" href="list-books">List Books Component</a> -->
+        <li class="nav-item" *ngIf="retrieveIsUserLoggedIn()">
           <a class="nav-link" routerLink="list-books-http">List Books Http Component</a>
+        </li>
+        <li class="nav-item" *ngIf="retrieveIsUserLoggedIn()">
+          <a class="nav-link" routerLink="logout">Logout</a>
         </li>
       </ul>
     </div>

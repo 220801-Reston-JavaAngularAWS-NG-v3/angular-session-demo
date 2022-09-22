@@ -13,6 +13,8 @@ import { EditBookComponent } from './books/edit-book/edit-book.component';
 import { ListBooksHttpComponent } from './books-http/list-books-http/list-books-http.component';
 import { EditBookHttpComponent } from './books-http/edit-book-http/edit-book-http.component';
 import { HttpClientModule } from '@angular/common/http';
+import { UserComponent } from './users/user/user.component';
+import { LogoutComponent } from './users/logout/logout.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +26,9 @@ import { HttpClientModule } from '@angular/common/http';
     HeaderComponent,
     EditBookComponent,
     ListBooksHttpComponent,
-    EditBookHttpComponent
+    EditBookHttpComponent,
+    UserComponent,
+    LogoutComponent
   ],
   imports: [
     BrowserModule,
